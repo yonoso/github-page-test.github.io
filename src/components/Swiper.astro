@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+// import img from "../images/img.png";
+---
+
+<div class="swiper-container swiper-container1">
+  <div class="swiper swiper1">
+    <!-- swiper-wrapper 必須・名称変更不可 -->
+    <div class="swiper-wrapper">
+      <!-- swiper-slide 必須・名称変更不可 -->
+      <div class="swiper-slide">
+        <img src="https://placehold.jp/150x150.png" alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://placehold.jp/150x150.png" alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://placehold.jp/150x150.png" alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://placehold.jp/150x150.png" alt="" />
+      </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination swiper-pagination1"></div>
+  </div>
+</div>
+
+<style lang="scss">
+  .swiper-container {
+    max-width: 1200px;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    padding-bottom: 100px;
+    .swiper {
+      overflow: visible;
+    }
+  }
+  .swiper-slide {
+    img {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import "swiper/css/bundle";
+  import { Autoplay, Pagination } from "swiper/modules";
+
+  const swiper = new Swiper(".swiper1", {
+    modules: [Autoplay, Pagination],
+    loop: false,
+    speed: 1000,
+    slidesPerView: 2,
+    // centeredSlides: true,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination1",
+      clickable: true,
+    },
+  });
+</script>
